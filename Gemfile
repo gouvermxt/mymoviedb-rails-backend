@@ -20,6 +20,13 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rubocop', '~> 0.71.0', require: false
 # Provide Ruby code completion in vscode
 gem 'rcodetools'
+# OMDB API wrapper
+gem 'omdb-api'
+# Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
+gem 'figaro'
+#A simple, standardized way to build and use Service Objects (aka Commands) in Ruby
+gem 'simple_command'
+ 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -32,6 +39,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'database_cleaner'
   gem 'guard-rspec', require: false
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do

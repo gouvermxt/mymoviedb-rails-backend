@@ -13,6 +13,17 @@
       "remoteWorkspaceRoot": "${workspaceRoot}",
       "cwd": "${workspaceRoot}",
       "showDebuggerOutput": true
+    },
+    {
+      "name": "Run RSpec - all",
+      "type": "Ruby",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "useBundler": true,
+      "pathToBundler": "/Users/gouvermxt/.rvm/rubies/ruby-2.6.0/bin/bundle",
+      "pathToRDebugIDE": "/Users/gouvermxt/.rvm/gems/ruby-2.6.0@mymoviedb/gems/ruby-debug-ide-0.6.1",
+      "debuggerPort": "1235",
+      "program": "/Users/gouvermxt/.rvm/gems/ruby-2.6.0@mymoviedb/bin/rspec"
     }
   ]
 }

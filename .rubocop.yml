@@ -1,2 +1,15 @@
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - '.git/**/*'
+Rails/DynamicFindBy:
+  Enabled:
+    false
+    # Exclude:
+    #   - 'app/controllers/movie_search_controller.rb'
+    #   - 'app/services/mmdb/commands/get_movie.rb'
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
 Style/FrozenStringLiteralComment:
   Enabled: false

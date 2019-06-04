@@ -1,11 +1,10 @@
+# Provides helpers for request specs
 module RequestSpecHelper
   def json
-    parsed_json = JSON.parse(response.body)
+    JSON.parse(response.body, symbolize_names: true)
+  end
 
-    if parsed_json.is_a? Array
-      parsed_json
-    else
-      ActiveSupport::HashWithIndifferentAccess.new(parsed_json)
-    end
+  def base_headers
+    { 'Content-Type' => 'application/json' }
   end
 end

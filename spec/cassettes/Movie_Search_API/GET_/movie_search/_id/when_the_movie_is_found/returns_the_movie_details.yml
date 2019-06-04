@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.omdbapi.com/?apikey=8b35d09b&i=tt0103064
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 04 Jun 2019 20:22:11 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d4f15df33926a4f9aee4825427ca10ca11559679731; expires=Wed, 03-Jun-20
+        20:22:11 GMT; path=/; domain=.omdbapi.com; HttpOnly
+      Cache-Control:
+      - public, max-age=86400
+      Expires:
+      - Wed, 05 Jun 2019 20:22:11 GMT
+      Last-Modified:
+      - Tue, 04 Jun 2019 20:16:11 GMT
+      Vary:
+      - "*, Accept-Encoding"
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Cf-Cache-Status:
+      - HIT
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4e1c9e107debd024-GRU
+    body:
+      encoding: ASCII-8BIT
+      string: '{"Title":"Terminator 2: Judgment Day","Year":"1991","Rated":"R","Released":"03
+        Jul 1991","Runtime":"137 min","Genre":"Action, Sci-Fi","Director":"James Cameron","Writer":"James
+        Cameron, William Wisher","Actors":"Arnold Schwarzenegger, Linda Hamilton,
+        Edward Furlong, Robert Patrick","Plot":"A cyborg, identical to the one who
+        failed to kill Sarah Connor, must now protect her teenage son, John Connor,
+        from a more advanced and powerful cyborg.","Language":"English, Spanish","Country":"USA","Awards":"Won
+        4 Oscars. Another 27 wins & 27 nominations.","Poster":"https://m.media-amazon.com/images/M/MV5BMGU2NzRmZjUtOGUxYS00ZjdjLWEwZWItY2NlM2JhNjkxNTFmXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg","Ratings":[{"Source":"Internet
+        Movie Database","Value":"8.5/10"},{"Source":"Rotten Tomatoes","Value":"93%"},{"Source":"Metacritic","Value":"75/100"}],"Metascore":"75","imdbRating":"8.5","imdbVotes":"901,145","imdbID":"tt0103064","Type":"movie","DVD":"31
+        Mar 1998","BoxOffice":"$198,116,802","Production":"TriStar Pictures","Website":"N/A","Response":"True"}'
+    http_version: 
+  recorded_at: Tue, 04 Jun 2019 20:22:11 GMT
+recorded_with: VCR 5.0.0
