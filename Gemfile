@@ -16,7 +16,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
+# Lint ruby code
 gem 'rubocop', '~> 0.71.0', require: false
+# Provide Ruby code completion in vscode
+gem 'rcodetools'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
