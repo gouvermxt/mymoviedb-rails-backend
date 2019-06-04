@@ -27,6 +27,11 @@ group :development, :test do
   # Support vscode debug
   gem 'ruby-debug-ide'
   gem 'debase'
+  # Add Rspec and other test support libraries
+  gem 'rspec-rails', '~> 3.8'
+  gem 'factory_bot_rails'
+  gem 'database_cleaner'
+  gem 'guard-rspec', require: false
 end
 
 group :development do
