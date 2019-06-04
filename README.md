@@ -1,24 +1,35 @@
-# README
+# My Movie DB
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The movies you love, go with you.
 
-Things you may want to cover:
+## Rails Backend API
 
-* Ruby version
+### Requirements
 
-* System dependencies
+- [Ruby 2.6](https://www.ruby-lang.org)
 
-* Configuration
+- [PostgreSQL](https://www.postgresql.org/)
 
-* Database creation
+### Database initialization
 
-* Database initialization
+- Setup [database.yml](config/database.yml) with your PostgreSQL authentication data
 
-* How to run the test suite
+- Open a terminal in the project's root folder
 
-* Services (job queues, cache servers, search engines, etc.)
+- Run `bin/bundle exec rails db:migrate` to create the database
 
-* Deployment instructions
+- Run `bin/bundle exec rails db:seed` to initialize the database with seed data
 
-* ...
+### How to run the api
+
+- Open a terminal in the project's root folder
+
+- Run `bin/bundle exec rails s -b 0.0.0.0 -p 3003`
+
+- The API will be available on <http://localhost:3003>
+
+### How to run the test suite
+
+- Open a terminal in the project's root folder
+
+- Run `bin/bundle exec guard`
