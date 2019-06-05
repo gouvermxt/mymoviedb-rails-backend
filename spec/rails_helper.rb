@@ -38,7 +38,10 @@ RSpec.configure do |config|
   # Includes helpers
   config.include RequestSpecHelper
   config.include I18nMacros
+  config.include FactoryBot::Syntax::Methods
 
+  config.filter_run_when_matching :focus
+  
   # Setup database cleaner
   # start by truncating all the tables but then use the faster transaction
   # strategy the rest of the time.
