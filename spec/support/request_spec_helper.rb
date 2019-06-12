@@ -5,6 +5,6 @@ module RequestSpecHelper
   end
 
   def base_headers
-    { 'Content-Type' => 'application/json' }
+    { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
   end
 end

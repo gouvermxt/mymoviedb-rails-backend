@@ -68,4 +68,5 @@ guard :rspec, cmd: 'bundle exec rspec' do
 
   # Service dir
   watch(/^.+\.rb/) { |_m| 'spec/requests' }
+  watch(/^.+\.yml/) { |_m| 'spec' }
 end

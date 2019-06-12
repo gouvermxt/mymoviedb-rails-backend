@@ -32,6 +32,8 @@ gem 'yajl-ruby', require: 'yajl'
 gem 'httparty'
 # Ruby Facets is the premiere collection of general purpose method extensions and standard additions for the Ruby programming language
 gem 'facets', require: false
+# Knock is an authentication solution for Rails API-only application based on JSON Web Tokens.
+gem 'knock'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -41,11 +43,18 @@ group :development, :test do
   gem 'debase'
   # Add Rspec and other test support libraries
   gem 'rspec-rails', '~> 3.8'
+  # factory_bot is a fixtures replacement with a straightforward definition syntax
   gem 'factory_bot_rails'
+  # Strategies for cleaning databases in Ruby. Can be used to ensure a clean state for testing.
   gem 'database_cleaner'
+  # Guard::RSpec automatically run your specs (much like autotest)
   gem 'guard-rspec', require: false
+  # Record your test suite's HTTP interactions and replay them during future test runs for fast, deterministic, accurate tests.
   gem 'vcr'
+  # Library for stubbing and setting expectations on HTTP requests in Ruby.
   gem 'webmock'
+  # Simple one-liner tests for common Rails functionality
+  gem 'shoulda-matchers'
 end
 
 group :development do
