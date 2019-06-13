@@ -4,7 +4,7 @@ module MMDB
     class GetMovie
       prepend SimpleCommand
 
-      def initialize(imdb_id:)
+      def initialize(imdb_id)
         @imdb_id = imdb_id
         @omdb_client = MMDB::OMDBClient.new
       end

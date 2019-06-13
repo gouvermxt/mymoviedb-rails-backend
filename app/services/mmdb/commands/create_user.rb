@@ -10,8 +10,8 @@ module MMDB
 
       def call
         ActiveRecord::Base.transaction do
-          user = User.create(@user_params)
-          
+          user = create_user
+
           if user.persisted?
             MMDB::Auth.new(user).start_sign_in
             user
@@ -19,6 +19,15 @@ module MMDB
             errors.add(:errors, user.errors.full_messages)
           end
         end
+      end
+
+      private
+
+      # If an unconfirmed user with the given email already exists, destroys it
+      # and tries to create a new one
+      def create_user
+        User.find_by(email: @user_params[:email], confirmed_at: nil)&.destroy
+        User.create(@user_params)
       end
     end
   end

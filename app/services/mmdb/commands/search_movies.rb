@@ -4,7 +4,7 @@ module MMDB
     class SearchMovies
       prepend SimpleCommand
 
-      def initialize(query:)
+      def initialize(query)
         @query = query
         @omdb_client = MMDB::OMDBClient.new
       end

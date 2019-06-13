@@ -1,12 +1,12 @@
 # Movie Search API
 class MovieSearchController < ApplicationController
   def index
-    command = MMDB::Commands::SearchMovies.call(query: params[:q])
+    command = MMDB::Commands::SearchMovies.call(params[:q])
     json(command, serializer: OMDBMovieSerializer)
   end
 
   def show
-    command = MMDB::Commands::GetMovie.call(imdb_id: params[:id])
+    command = MMDB::Commands::GetMovie.call(params[:id])
 
     json(
       command,

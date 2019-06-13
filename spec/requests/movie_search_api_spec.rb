@@ -1,12 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe 'Movie Search API', type: :request do
-  let(:headers) { base_headers }
-
   describe 'GET /movie_search', :vcr do
-    before { get '/movie_search/?q=terminator', headers: headers }
+    let(:query) { 'terminator' }
+    let(:search_movie) do
+      get "/movie_search/?q=#{query}", headers: base_headers
+    end
 
     it 'returns the results for the search term' do
+      search_movie
       first_movie = build(:omdb_movie_search_result)
 
       expect(response).to have_http_status 200
@@ -14,9 +16,10 @@ RSpec.describe 'Movie Search API', type: :request do
     end
 
     context 'when there no results' do
-      before { get '/movie_search/?q=-1-1', headers: headers }
+      let(:query) { '-1-1' }
 
       it 'returns an empty array' do
+        search_movie
         expect(response).to have_http_status 200
         expect(json).to eq([])
       end
@@ -24,9 +27,11 @@ RSpec.describe 'Movie Search API', type: :request do
   end
 
   describe 'GET /movie_search/:id', :vcr do
-    before { get '/movie_search/tt0103064' }
+    let(:movie_id) { 'tt0103064' }
+    let(:get_movie) { get "/movie_search/#{movie_id}", headers: base_headers }
 
     it 'returns the movie details' do
+      get_movie
       omdb_movie_details = build(:omdb_movie_details)
 
       expect(response).to have_http_status 200
@@ -34,9 +39,10 @@ RSpec.describe 'Movie Search API', type: :request do
     end
 
     context 'when the movie is not found' do
-      before { get '/movie_search/ttdontexist' }
+      let(:movie_id) { 'ttdontexist' }
 
       it 'returns an error message' do
+        get_movie
         expect(response).to have_http_status 404
         expect(json[:errors]).to be_present
       end
