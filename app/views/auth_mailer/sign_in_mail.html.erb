@@ -5,14 +5,14 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1><%= t('sign_in_mail.title', user_name: @user_name) %></h1>
+    <h2><%= t('sign_in_mail.title', user_name: @user_name) %></h2>
 
     <p>
       <%= t('sign_in_mail.body_1') %><br>
     </p>
 
     <p>
-      <%= t('sign_in_mail.body_2', sign_in_url: @sign_in_url) %>
+      <%= t('sign_in_mail.body_2_html', sign_in_url: @sign_in_url) %>
     </p>
 
     <p><%= t('sign_in_mail.body_3') %></p>

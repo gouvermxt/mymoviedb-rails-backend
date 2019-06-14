@@ -34,6 +34,8 @@ gem 'httparty'
 gem 'facets', require: false
 # Knock is an authentication solution for Rails API-only application based on JSON Web Tokens.
 gem 'knock'
+# Pretty print your Ruby objects with style -- in full color and with proper indentation
+gem 'awesome_print'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -62,6 +64,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Preview mail in the browser instead of sending.
+  gem 'letter_opener'
 end
 
 

@@ -3,7 +3,7 @@ en:
     subject: Your sign-in link for My Movie DB
     title: Hi %{user_name}! 👋
     body_1: Here is a magic link for quickly signing into My Movie DB.
-    body_2: 'To login to the site, just follow this link: %{sign_in_url}'
+    body_2_html: 'To login to the site, just follow <a href="%{sign_in_url}">this link</a>.'
     body_3: Thanks for joining and have a great day!
     text_version: 'Hi, %{user_name}. Here is a magic link for quickly signing into My Movie DB. To login to the site, just follow this link: %{sign_in_url}. Thanks for joining and have a great day!'
   errors:
