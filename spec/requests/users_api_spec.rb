@@ -43,7 +43,7 @@ RSpec.describe 'Users API', type: :request do
 
     context 'when an unconfirmed user with the given email already exists' do
       it 'destroys the previous user and creates a new one with the new data' do
-        create(:user, user_attributes)
+        create(:user, user_attributes.merge(confirmed_at: nil))
         params = { name: 'New name', email: user_attributes[:email] }
         post '/users', params: params.to_json, headers: base_headers
 

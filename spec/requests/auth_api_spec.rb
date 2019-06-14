@@ -9,7 +9,7 @@ RSpec.describe 'Auth API', type: :request do
     post '/auth', params: params.to_json, headers: base_headers
   end
 
-  describe 'GET /auth' do
+  describe 'POST /auth' do
     before do
       allow(Knock::AuthToken).to receive(:new) { double(token: auth_token) }
     end
