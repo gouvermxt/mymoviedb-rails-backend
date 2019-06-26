@@ -10,10 +10,10 @@ module MMDB
     OMDB_JSON_SEARCH_KEY = 'Search'.freeze
     OMDB_JSON_RESPONSE_KEY = 'Response'.freeze
 
-    def search(query)
+    def search(query, limit)
       response = self.class.get('/', query: { s: query })
       results = parse_response(response)
-      get_search_results(results)
+      get_search_results(results, limit)
     end
 
     def find_by_id(imdb_id)
@@ -35,9 +35,12 @@ module MMDB
       result.merge!(success?: success)
     end
 
-    def get_search_results(results)
+    def get_search_results(results, limit)
+      limit = limit.present? ? limit.to_i - 1 : nil
+
       if results[:success?]
-        movies = results[OMDB_JSON_SEARCH_KEY].map do |result|
+        movie_results = results[OMDB_JSON_SEARCH_KEY][0..limit]
+        movies = movie_results.map do |result|
           create_struct(result)
         end
 

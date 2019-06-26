@@ -3,7 +3,7 @@ class MovieSearchController < ApplicationController
   skip_before_action :authenticate_user
 
   def index
-    command = MMDB::Commands::SearchMovies.call(params[:q])
+    command = MMDB::Commands::SearchMovies.call(movie_search_params)
     json(command, serializer: OMDBMovieSerializer)
   end
 
@@ -16,5 +16,11 @@ class MovieSearchController < ApplicationController
       view: :detailed,
       error_status: 404
     )
+  end
+
+  private
+
+  def movie_search_params
+    params.permit(:q, :limit)
   end
 end

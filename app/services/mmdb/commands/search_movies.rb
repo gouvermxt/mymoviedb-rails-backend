@@ -4,13 +4,14 @@ module MMDB
     class SearchMovies
       prepend SimpleCommand
 
-      def initialize(query)
-        @query = query
+      def initialize(movie_search_params)
+        @query = movie_search_params[:q]
+        @limit = movie_search_params[:limit]
         @omdb_client = MMDB::OMDBClient.new
       end
 
       def call
-        result = @omdb_client.search(@query)
+        result = @omdb_client.search(@query, @limit)
 
         if result.success?
           result.movies

@@ -15,6 +15,15 @@ RSpec.describe 'Movie Search API', type: :request do
       expect(json[0]).to eq(first_movie)
     end
 
+    context 'when there is a limit' do
+      let(:limit) { 5 }
+
+      it 'returns the limited number of results' do
+        get "/movie_search/?q=#{query}&limit=#{limit}", headers: base_headers
+        expect(json.size).to eq(limit)
+      end
+    end
+
     context 'when there no results' do
       let(:query) { '-1-1' }
 
