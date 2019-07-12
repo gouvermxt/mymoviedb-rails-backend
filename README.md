@@ -10,17 +10,26 @@ The movies you love, go with you.
 
 - [PostgreSQL](https://www.postgresql.org/)
 
-### Database initialization
+### Setup
 
 - Setup [database.yml](config/database.yml) with your PostgreSQL authentication data
 
 - Open a terminal in the project's root folder
 
-- Run `bin/bundle exec rails db:migrate` to create the database
+- Run `bin/bundle exec rails db:create` to create the database
 
-- Run `bin/bundle exec rails db:seed` to initialize the database with seed data
+- Run `bin/bundle exec rails db:migrate` to create the tables
 
-### How to run the api
+- Create a configuration file containing the following:
+
+  ```yaml
+  # config/application.yml
+
+  OMDB_API_KEY: <your OMDB API key (http://www.omdbapi.com/apikey.aspx)>
+  FRONT_END_HOST: <the host where the frontend app is running (http://localhost:3000)>
+  ```
+
+### Run
 
 - Open a terminal in the project's root folder
 
@@ -28,8 +37,18 @@ The movies you love, go with you.
 
 - The API will be available on <http://localhost:3003>
 
-### How to run the test suite
+- Checkout the [API Docs](https://documenter.getpostman.com/view/1027148/SVSHqpEC)
+
+- Setup the [frontend](https://github.com/gouvermxt/mymoviedb-react-frontend)
+
+### Test
 
 - Open a terminal in the project's root folder
 
-- Run `bin/bundle exec guard`
+- Run `bin/bundle exec rspec`
+
+### Work in progress
+
+- [x] movie search
+- [x] authentication
+- [ ] movie management
