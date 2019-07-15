@@ -16,9 +16,9 @@ The movies you love, go with you.
 
 - Open a terminal in the project's root folder
 
-- Run `bin/bundle exec rails db:create` to create the database
+- Run `bin/bundle` to install the gems
 
-- Run `bin/bundle exec rails db:migrate` to create the tables
+- Run `bin/rails db:setup` to setup the database
 
 - Create a configuration file containing the following:
 
@@ -33,7 +33,7 @@ The movies you love, go with you.
 
 - Open a terminal in the project's root folder
 
-- Run `bin/bundle exec rails s -b 0.0.0.0 -p 3003`
+- Run `bin/rails s -b 0.0.0.0 -p 3003`
 
 - The API will be available on <http://localhost:3003>
 
